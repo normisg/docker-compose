@@ -1,0 +1,9 @@
+services:
+  - docker
+
+install:
+  - docker build -t docker-compose .
+  - docker run -d --name docker-compose docker-compose
+
+script:
+  - docker ps | grep -q docker-compose
